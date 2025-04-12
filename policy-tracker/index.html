@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Public Policy Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Track and monitor public policies" />
+  <meta name="author" content="Public Policy Tracker" />
+
+  <meta property="og:title" content="Public Policy Tracker" />
+  <meta property="og:description" content="Track and monitor public policies" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@policy_tracker" />
+  <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Public Policy Tracker</h1>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="http://localhost/aiProject/about_us/">About</a></li>
+          <li><a href="http://localhost/aiProject/contact_form/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Public Policy Tracker</h2>
+      <p>Stay informed about legislative activities and policy developments</p>
+    </section>
+
+    <section class="filters">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search policies...">
+      </div>
+      
+      <div class="filter-group">
+        <label for="status-filter">Status:</label>
+        <select id="status-filter">
+          <option value="all">All</option>
+          <option value="introduced">Introduced</option>
+          <option value="committee">In Committee</option>
+          <option value="passed">Passed</option>
+          <option value="enacted">Enacted</option>
+          <option value="failed">Failed</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label for="category-filter">Category:</label>
+        <select id="category-filter">
+          <option value="all">All</option>
+          <option value="healthcare">Healthcare</option>
+          <option value="education">Education</option>
+          <option value="environment">Environment</option>
+          <option value="economy">Economy</option>
+          <option value="infrastructure">Infrastructure</option>
+          <option value="technology">Technology</option>
+          <option value="security">Security</option>
+        </select>
+      </div>
+      
+      <button id="reset-filters">Reset Filters</button>
+    </section>
+
+    <section class="policies">
+      <div class="policies-header">
+        <h3>Recent Policies</h3>
+        <div>
+          <button id="add-policy-btn">Add/Update Policy</button>
+          <span id="policy-count">Showing 0 policies</span>
+        </div>
+      </div>
+      
+      <div id="policy-list" class="policy-grid">
+        <!-- Policy cards will be populated here by JavaScript -->
+      </div>
+      
+      <div id="empty-state" class="empty-state hidden">
+        <div class="empty-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <h3>No policies found</h3>
+        <p>We couldn't find any policies matching your search criteria. Try adjusting your filters or search term.</p>
+        <button id="reset-empty-state">Reset Filters</button>
+      </div>
+    </section>
+
+    <!-- Modal for Add/Update -->
+    <div id="policy-modal" class="hidden modal">
+      <div class="modal-content">
+        <h3>Add/Update Policy</h3>
+        <input type="text" id="policy-title" placeholder="Title" />
+        <textarea id="policy-description" placeholder="Description"></textarea>
+        <select id="policy-status">
+          <option value="introduced">Introduced</option>
+          <option value="committee">In Committee</option>
+          <option value="passed">Passed</option>
+          <option value="enacted">Enacted</option>
+          <option value="failed">Failed</option>
+        </select>
+        <select id="policy-category">
+          <option value="healthcare">Healthcare</option>
+          <option value="education">Education</option>
+          <option value="environment">Environment</option>
+          <option value="economy">Economy</option>
+          <option value="infrastructure">Infrastructure</option>
+          <option value="technology">Technology</option>
+          <option value="security">Security</option>
+        </select>
+        <input type="text" id="policy-sponsors" placeholder="Comma-separated sponsors" />
+        <button id="save-policy-btn">Save Policy</button>
+        <button id="close-modal-btn">Cancel</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 PolicyTrack. All rights reserved.</p>
+      <p>Data provided for demonstration purposes only. Not affiliated with any government entity.</p>
+    </div>
+  </footer>
+
+  <a href="http://localhost/aiProject/chatbot/" id="chatbot-button" title="Need Help? Chat with us!">
+    💬 Chat
+  </a>  
+
+  <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <script src="script.js"></script>
+</body>
+</html>

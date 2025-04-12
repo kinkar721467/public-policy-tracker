@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --primary-color: #0f1725;
+    --secondary-color: #2ecc71;
+    --background-color: #1e2a3a;
+    --font-color: white;
+    --hover-color: #3f5efb;
+    --border-color: #a1c4fd;
+    --heading-color: linear-gradient(90deg, #fc466b 0%, #3f5efb 100%);
+    --sub-heading-color: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%); 
+    --font-size: 16px;
+}
+
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a1c4fd;
+}
+
+.app {
+    height: 100%;
+    width: 100%;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* conatiner  */
+.container {
+    height:100%;
+    width: 100%;
+    padding: 1rem 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container .nav {
+    min-height: 3rem;
+    /* border: 2px solid white; */
+    padding: 0 1rem;
+}
+
+.nav .nav-bar {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bar #nav-bar-right,
+.nav-bar #nav-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--font-color);
+}
+
+#nav-bar-left .logo h3 span {
+    color: #fc466b;
+}
+
+.left-select select {
+    padding: 5px;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--font-color);
+    background: var(--primary-color);
+}
+
+.nav-bar #nav-bar-right #mode,
+.nav-bar #nav-bar-right #profile {
+    background: var(--background-color);
+    font-size: 1.2rem;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: var(--font-color);
+    padding: 0.6rem 1rem;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-bar #nav-bar-right
+#mode:hover {
+    color: var(--font-color);
+    background: var(--hover-color);
+}
+
+/* App Header */
+
+.container .app-header {
+    padding: 0.5rem 1rem;
+}
+
+.app-header .heading {
+    background: var(--heading-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.app-header .sub-heading {
+    background: var(--sub-heading-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+/* suggestion section */
+.suggestion-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.suggestion-box {
+    display: flex;
+    flex-direction: column;
+    background: var(--background-color);
+    color: var(--font-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.suggestion-box:hover {
+    transform: scale(1.05);
+}
+
+.suggestion-box .icon-sugg {
+    display: flex;
+    align-self: flex-end;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+}
+
+/*  Chat Input */
+.chat-input {
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+/* Input Box */
+.chat-input .input-box {
+    flex: 1;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.chat-input .input-box input {
+    width: 100%;
+    padding: 0.8rem 3rem 0.8rem 1.2rem;
+    border: 2px solid rgb(116, 114, 114);
+    border-radius: 2rem;
+    outline: none;
+    font-size: 1rem;
+    background: var(--background-color);
+    color: var(--font-color);
+    transition: border-color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.chat-input .input-box input:focus {
+    border:2px solid var(--border-color);
+}
+
+/* Button inside Input */
+.chat-input .input-box #send-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--hover-color);
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: var(--font-color);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.chat-input .input-box input:valid ~ #send-btn{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Buttons Styling */
+#chatmic button,
+.aichat button {
+    background: var(--background-color);
+    font-size: 1.2rem;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: var(--font-color);
+    padding: 0.6rem 1rem;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.aiTools #aiToolBtn {
+    background: var(--background-color);
+    font-size: 1.2rem;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: var(--font-color);
+    padding: 0.6rem 1rem;
+    border-radius: 30px;
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+
+#chatmic button:hover,
+.aichat button:hover,
+.aiTools #aiToolBtn:hover {
+    color: var(--font-color);
+    background: var(--hover-color);
+    border-color: white;
+}
+
+/* conatiner form */
+.container-form {
+    padding: 20px 15px;
+    /* min-height: 400px; */
+    max-width: 100%;
+    overflow-y: auto;
+}
+
+.container-form .inbox {
+    width: 100%;
+    display: flex;
+    /* justify-content: flex-end; */
+}
+
+.container-form .inbox .icon {
+    height: 40px;
+    width: 40px;
+    color: var(--font-color);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    background: var(--background-color);
+}
+
+.container-form .inbox .msg-header {
+    max-width: 53%;
+    background: var(--background-color);
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.container-form .inbox .msg-header p {
+    color: var(--font-color);
+    padding: 8px 10px;
+    font-size: 1rem;
+    word-wrap: break-word;
+}
+
+.container-form .user-inbox {
+    justify-content: flex-end;
+    margin: 1rem 0;
+} 
+
+/* loader animation */
+.loader {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0.5rem;
+  }
+  
+  .loader div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: bounce 2s infinite ease-in-out;
+  }
+  
+  .loader div:nth-child(1) { background-color: #ea4335; animation-delay: 0s; }
+  .loader div:nth-child(2) { background-color: #4285f4; animation-delay: 0.2s; }
+  .loader div:nth-child(3) { background-color: #34a853; animation-delay: 0.4s; }
+  .loader div:nth-child(4) { background-color: #fbbc05; animation-delay: 0.6s; }
+  .loader div:nth-child(5) { background-color: #ff9900; animation-delay: 0.8s; }
+  
+  @keyframes bounce {
+    0%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+  }
+  
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chat-input {
+        /* display: flex; */
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .container-form .inbox {
+        align-self: flex-end;
+    }
+
+    .chat-input .input-box input {
+        align-self: flex-end;
+        font-size: 0.9rem;
+        padding: 0.7rem 2.5rem 0.7rem 1rem;
+        height: auto;
+        min-height: 40px;
+        width: 100%;
+    }
+
+    .app-header .heading {
+        font-weight: 600;
+        font-size: 2rem;
+    }
+    
+    .app-header .sub-heading {
+        font-weight: 500;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .container {
+        padding: 2rem;
+    }
+
+    .suggestion-box {
+        display: none;
+    }
+
+    .nav {
+        display: none;
+    }
+    .container-form {
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+}
